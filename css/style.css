@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.graph_place {
+  width: 100%;
+  height: 400px;
+}
+
+.main_menu {
+  padding: 0;
+  display: grid;
+  width: 80vw;
+  height: 80vh;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.main_menu__item {
+  display: block;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #4d99d5;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.main_menu__item:hover {
+  opacity: 1;
+}
+
+.main_menu__item a {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

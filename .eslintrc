@@ -1,11 +1,5 @@
 {
-  "parser": "babel-eslint",
   "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "resources/assets/config-build/webpack.config.js"
-      }
-    },
     "flowtype": {
       "onlyFilesWithFlowAnnotation": true
     }
@@ -15,7 +9,6 @@
   },
   "extends": [
     "airbnb",
-    "plugin:flowtype/recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
@@ -26,6 +19,8 @@
     "cl": false
   },
   "rules": {
+    "max-len": "off",
+
     "no-restricted-imports": ["error", {"patterns":  [".", ".."]}],
 
     "no-param-reassign": "off",

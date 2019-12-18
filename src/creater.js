@@ -1,3 +1,5 @@
+// flow
+
 const vis = require("vis-network");
 const settings = require("../settings");
 

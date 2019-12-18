@@ -1,25 +1,30 @@
+// @flow
+
 const { app, BrowserWindow } = require("electron");
+const settings = require("./settings");
+
+const selectedSettings = settings.default;
+
+let mainWindow = null;
 
 function createWindow() {
-  // Создаем окно браузера.
-  let win = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    resizable: false,
+    frame: false,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    backgroundColor: selectedSettings.mainWindowBgColor
   });
 
-  // и загрузить index.html приложения.
-  win.loadFile("index.html");
+  mainWindow.loadFile("index.html");
 
-  win.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
-  win.on("closed", () => {
-    // Разбирает объект окна, обычно вы можете хранить окна
-    // в массиве, если ваше приложение поддерживает несколько окон в это время,
-    // тогда вы должны удалить соответствующий элемент.
-    win = null;
+  mainWindow.on("closed", () => {
+    mainWindow = null;
   });
 }
 
@@ -32,3 +37,5 @@ app.on("window-all-closed", () => {
     app.quit();
   }
 });
+
+process.mainWindow = mainWindow;

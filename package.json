@@ -10,28 +10,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.5.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.0",
-    "@babel/preset-env": "^7.5.4",
-    "babel-loader": "^8.0.6",
-    "babel-preset-flow": "^6.23.0",
     "electron": "^7.1.5",
     "vis-network": "^6.4.7"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.2",
     "babel-preset-jest": "^24.6.0",
     "electron-packager": "^14.1.1",
     "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",
-    "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-flowtype": "^3.11.1",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "flow-bin": "^0.114.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.19.1"
   }
 }
