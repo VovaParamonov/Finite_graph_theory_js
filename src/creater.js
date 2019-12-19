@@ -6,7 +6,14 @@ const settings = require("../settings");
 const selectedSettings = settings.default;
 
 const creater = {
-  defaultGraph: (containerId, data, options) => {
+  /**
+   * @param container:
+   * "string" (id) | "Object" (DOM element)
+   * @param data
+   * @param options
+   * @returns {{data: { nodes: vis.data, edges: vis.data }, graph: *}}
+   */
+  defaultGraph: (container, data, options) => {
     options = options || {};
 
     // set default color from settings for nodes
@@ -19,22 +26,35 @@ const creater = {
     const nodes = new vis.DataSet(data.nodes);
     const edges = new vis.DataSet(data.edges);
 
+    let $container;
+
     data = { nodes, edges };
+    if (typeof container === "string") {
+      $container = document.querySelector(`#graph_place-${container}`);
 
-    let $container = document.querySelector(`#graph_place-${containerId}`);
+      if ($container) {
+        if (window[`graph-${container}`]) {
+          window[`graph-${container}`].destroy();
+          window[`graph-${container}`] = null;
+        }
+      } else {
+        $container = document.createElement("div");
+        $container.id = `graph_place-${container}`;
+        $container.className = "graph_place";
 
-    if ($container) {
-      window[`graph-${containerId}`].destroy();
-      window[`graph-${containerId}`] = null;
+        document.body.appendChild($container);
+      }
     } else {
-      $container = document.createElement("div");
-      $container.id = `graph_place-${containerId}`;
-      $container.className = "graph_place";
-
-      document.body.appendChild($container);
+      $container = container;
     }
 
-    window[`graph-${containerId}`] = new vis.Network($container, data, options);
+    const graph = new vis.Network($container, data, options);
+    window[`graph-${container}`] = graph;
+
+    return {
+      graph,
+      data
+    };
   }
 };
 

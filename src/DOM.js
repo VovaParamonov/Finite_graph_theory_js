@@ -1,11 +1,11 @@
 // @flow
 
-function domInit(remote) {
+function domInit(remoute) {
   const $btnClose = document.querySelector("#btn-close");
 
   (function setEvents() {
     $btnClose.addEventListener("click", () => {
-      const window = remote.getCurrentWindow();
+      const window = remoute.getCurrentWindow();
       window.close();
     });
   })();

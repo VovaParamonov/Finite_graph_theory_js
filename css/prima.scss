@@ -1,0 +1,30 @@
+@import "comon";
+
+body {
+  color: $secondColor;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.tool-add_node {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto;
+  & > * {
+    margin-bottom: 10px;
+  }
+}
+
+.tool-add_node__coords {
+  display: flex;
+  justify-content: space-between;
+  input {
+    width: 48%;
+    height: 100%;
+  }
+}
+

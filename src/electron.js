@@ -15,7 +15,11 @@ class Window {
         backgroundColor: selectedSettings.defaultWindowBgColor,
         show: false,
         modal: true,
-        parent: allWindows[0]
+        frame: false,
+        parent: allWindows[0],
+        webPreferences: {
+          nodeIntegration: true
+        }
       },
       options
     );
@@ -25,6 +29,12 @@ class Window {
     this.window.loadFile(htmlPath);
 
     allWindows.push(this.window);
+
+    // this.window.webContents.openDevTools();
+
+    this.window.once("ready-to-show", () => {
+      this.window.show();
+    });
 
     this.window.on("close", () => {
       allWindows = allWindows.filter(w => w !== this.window);

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <title>Network</title>
+    <link rel="stylesheet" href="../../../css/comon.css">
+    <link rel="stylesheet" href="../../../css/prima.css">
+</head>
+<body>
+<button id="btn-close"></button>
+
+<h1>Алгоритм Прима</h1>
+
+<div id="graph_place-prima"></div>
+
+<section class="section-interface">
+    <div class="section">
+        <div class="tool-add_node">
+            <h3>Добавить вершину</h3>
+            <input class="tool-add_node__label" type="text" placeholder="Введите лейбл" value="1">
+            <div class="tool-add_node__coords">
+                <input class="tool-add_node__pos_x" type="number" placeholder="Введите координату X">
+                <input class="tool-add_node__pos_y" type="number" placeholder="Введите координату Y" >
+            </div>
+            <button class="btn-add_node">Добавить</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    require("./prima");
+</script>
+</body>
+</html>
