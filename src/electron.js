@@ -30,7 +30,10 @@ class Window {
 
     allWindows.push(this.window);
 
-    // this.window.webContents.openDevTools();
+    if (selectedSettings.openDevTools) {
+      this.window.webContents.openDevTools();
+    }
+    // this.window.webContents.session.clearCache();
 
     this.window.once("ready-to-show", () => {
       this.window.show();

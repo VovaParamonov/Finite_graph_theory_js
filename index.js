@@ -21,7 +21,9 @@ function createWindow() {
 
   mainWindow.loadFile("index.html");
 
-  // mainWindow.webContents.openDevTools();
+  if (selectedSettings.openDevTools) {
+    mainWindow.webContents.openDevTools();
+  }
 
   mainWindow.on("closed", () => {
     mainWindow = null;
@@ -37,5 +39,3 @@ app.on("window-all-closed", () => {
     app.quit();
   }
 });
-
-process.mainWindow = mainWindow;

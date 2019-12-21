@@ -1,4 +1,4 @@
-@import "comon";
+@import "common";
 
 body {
   color: $secondColor;
@@ -6,6 +6,10 @@ body {
 
 h3 {
   margin-bottom: 10px;
+}
+
+.section-interface {
+  position: relative;
 }
 
 .tool-add_node {
@@ -26,5 +30,15 @@ h3 {
     width: 48%;
     height: 100%;
   }
+}
+
+.btn-run-prima {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 

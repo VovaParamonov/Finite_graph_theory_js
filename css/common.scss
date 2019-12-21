@@ -15,6 +15,11 @@ body {
   font-family: Roboto, sans-serif;
   font-size: 24px;
   padding-top: 20px;
+  background: rgb(36,33,97);
+  background: linear-gradient(45deg, rgba(36,33,97,1) 0%, rgba(42,42,154,1) 100%, rgba(57,111,166,1) 100%);
+  background-size: 100% 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 a {
@@ -58,16 +63,20 @@ button:hover {
   padding-bottom: 0;
 }
 
+.section-graph_place {
+  padding-top: 0;
+}
+
 #btn-close {
   position: absolute;
   right: 20px;
   top: 20px;
-  width: 15px;
-  height: 15px;
+  width: 7px;
+  height: 10px;
   background-image: url("../img/close.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   border: none;
   background-color: inherit;
   cursor: pointer;
@@ -75,13 +84,14 @@ button:hover {
 
 [id^="graph_place"] {
   width: 100%;
+  margin: 0 auto;
   height: 250px;
-  box-shadow: 0 0 20px #396f9d;
+  border: 1px solid $secondColor;
+  //box-shadow: 0 0 20px #396f9d;
 }
 
 @font-face {
   font-family: Roboto;
-
   src: url(../fonts/Roboto/Roboto-Bold.ttf);
   src: url(../fonts/Roboto/Roboto-Light.ttf);
   src: url(../fonts/Roboto/Roboto-Medium.ttf);
