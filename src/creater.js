@@ -2,6 +2,7 @@
 
 const vis = require("vis-network");
 const settings = require("../settings");
+const { parseToArray } = require("./functions");
 
 const selectedSettings = settings.default;
 
@@ -49,7 +50,8 @@ const creater = {
     }
 
     const graph = new vis.Network($container, data, options);
-    window[`graph-${container}`] = graph;
+
+    console.log(graph, data);
 
     return {
       graph,

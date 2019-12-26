@@ -1,5 +1,4 @@
 const { remote } = require("electron");
-const vis = require("vis-network");
 const { domInit } = require("../../DOM");
 const creater = require("../../creater");
 const {
@@ -16,15 +15,13 @@ const $btnAddNode = document.querySelector(".btn-add_node");
 const $btnRunPrima = document.querySelector(".btn-run-prima");
 const $toolSection = document.querySelector(".section-interface");
 
-let graphData = creater.defaultGraph(
+const graphData = creater.defaultGraph(
   "prima",
   {},
   {
     physics: false
   }
 );
-
-// findNodeByLabel("test", graphData.data.nodes);
 
 function formValid() {
   return (
@@ -111,8 +108,6 @@ function btnRunHandler(e) {
     to: edge.toId,
     label: edge.labelModule.lines[0].blocks[0].text
   }));
-
-  console.log(newEdges);
 
   graphData.graph.setData({
     nodes: graphData.data.nodes,

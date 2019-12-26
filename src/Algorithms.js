@@ -1,10 +1,5 @@
 // @flow
-const {
-  getEdgesById,
-  getConnectedNodeIdThroughEdge,
-  edgesFilter,
-  parseToArray
-} = require("./functions");
+const { getConnectedNodeIdThroughEdge, parseToArray } = require("./functions");
 
 /**
  * @param graph
@@ -14,7 +9,6 @@ function prima(graph) {
   const selectedEdges = [];
 
   const baseNodes = parseToArray(graph.body.nodes, "edge");
-  const baseEdges = graph.body.edges;
 
   selectedNodes.push(baseNodes[0]);
 
@@ -29,14 +23,7 @@ function prima(graph) {
         selectedNodes.find(node => node.id === edge.fromId) &&
         selectedNodes.find(node => node.id === edge.toId)
       );
-      // if (selectedNodes.find(node => node.id === edge.fromId) !== undefined) {
-      //   return selectedNodes.find(node => node.id === edge.toId) === undefined;
-      // }
-      //
-      // return selectedNodes.find(node => node.id === edge.fromId) === undefined;
     });
-
-    // console.log("connectedEdges",connectedEdges);
 
     let minEdge;
     connectedEdges.forEach(currentEdge => {
@@ -69,11 +56,18 @@ function prima(graph) {
     const newNode = getConnectedNodeIdThroughEdge(selectedEdgeFrom.id, minEdge);
 
     selectedNodes.push(newNode);
-    console.log("newId", newNode.id);
   }
   return selectedEdges;
 }
 
+function craskala (graph) {
+  const arrNodes = parseToArray(graph.body.nodes, "edge");
+  const arrEdges = parseToArray(graph.body.edges, "nodes");
+
+  console.log(arrEdges, arrNodes);
+}
+
 module.exports = {
-  prima
+  prima,
+  craskala
 };

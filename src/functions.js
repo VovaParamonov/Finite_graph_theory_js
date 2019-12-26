@@ -5,10 +5,6 @@ function alertError(title, message) {
   dialog.showErrorBox(title, message);
 }
 
-function findNodeByLabel(label, nodes) {
-  console.log(nodes);
-}
-
 function calculateDistance(coords1, coords2) {
   const dX = Math.abs(coords1.x - coords2.x);
   const dY = Math.abs(coords1.y - coords2.y);
@@ -42,11 +38,13 @@ function getEdgesById(edgeid, edges) {
   return resultEdges;
 }
 
-function edgesFilter(edges, callBack) {
+
+
+function objectFilter(object, callBack) {
   const resultEdges = {};
 
-  for (const edge in edges) {
-    if (callBack(edges[edge])) resultEdges[edge] = edges[edge];
+  for (const elem in object) {
+    if (callBack(object[elem])) resultEdges[elem] = object[elem];
   }
 }
 
@@ -73,10 +71,9 @@ function parseToArray(object, skipStr) {
 
 module.exports = {
   alertError,
-  findNodeByLabel,
   calculateDistance,
   getEdgesById,
   getConnectedNodeIdThroughEdge,
-  edgesFilter,
+  objectFilter,
   parseToArray
 };

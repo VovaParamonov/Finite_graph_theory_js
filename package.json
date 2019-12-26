@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^7.1.5",
-    "vis-network": "^6.4.7"
+    "vis-network": "^6.4.7",
+    "electron-reload": "^1.5.0"
   },
   "devDependencies": {
     "babel-preset-jest": "^24.6.0",

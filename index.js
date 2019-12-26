@@ -3,6 +3,8 @@
 const { app, BrowserWindow } = require("electron");
 const settings = require("./settings");
 
+require("electron-reload")(__dirname);
+
 const selectedSettings = settings.default;
 
 let mainWindow = null;
